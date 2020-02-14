@@ -7,4 +7,4 @@ class Item(models.Model):
     image = models.ImageField(blank=True, null=True)
 
     def __str__(self):
-        return self.title
+        return f'{self.title}, {self.description}'
