@@ -22,7 +22,6 @@ class TestForm(TestCase):
         # Check if form is valid
         self.assertTrue(form.is_valid(), "Form is not valid")
         # Check if the form actually save
-        self.assertTrue(form.save())
 
         # to test the signup function in the form.py
         person = form.save()
