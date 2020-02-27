@@ -12,26 +12,26 @@ class TestForm(TestCase):
             'first_name': 'Mike',
             'last_name': 'Mike',
             'username': 'MIKEMIKE',
-            'email': 'mike@marko.com',
+            'email': 'mickiasomg@gmail.com',
             'password1': 'michaellyon',
             'password2': 'michaellyon'
         })
         # user = User.objects.create_user("MIKEMIKE", "mike@marko.com")
-
-        # request = self.client.request()
+        # session = self.client.session
+        request = self.client.request(session)
         # Check if form is valid
         self.assertTrue(form.is_valid(), "Form is not valid")
         # Check if the form actually save
-
+        # self.assertTrue(form.save(self.client.request))
         # to test the signup function in the form.py
-        person = form.save()
+        person = form.save(request)
         self.assertEquals(person, CustomSignupForm.signup())
 
-        # check in values inputed.
+        # check in values input.
 
         self.assertEqual(person.first_name, "Mike")
         self.assertEqual(person.last_name, "Mike")
         self.assertEqual(person.username, "Mike")
-        self.assertEqual(person.email, "mike@marko.com")
+        self.assertEqual(person.email, "mickiasomg@gmail.com")
         self.assertEqual(person.password1, "michaellyon")
         self.assertEqual(person.password1, "michaellyon")
